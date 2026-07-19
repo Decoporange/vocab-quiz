@@ -1,0 +1,18 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+dev-dist/
+
+# TypeScript build cache (tsconfig.node.json outDir含む)
+.tsbuildcache/
+*.tsbuildinfo
+
+# Editor / OS
+.DS_Store
+*.log
+
+# Env
+.env
+.env.local
