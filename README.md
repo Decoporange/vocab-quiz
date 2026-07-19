@@ -1,6 +1,6 @@
 # Vintage熟語クイズ
 
-スマホで反復学習するための4択クイズPWAです。個人利用を目的としています。
+Vintage 4th Edition の英熟語（問題番号848〜1323を想定）を、スマホで反復学習するための4択クイズPWAです。個人利用を目的としています。
 
 ## 主な機能
 
@@ -89,6 +89,22 @@ id,english,japanese,explanation_type,explanation
 ## PWAアイコンについて
 
 `public/icon-192.png` `public/icon-512.png` `public/icon-maskable-512.png` `public/apple-touch-icon.png` はプレースホルダー（紫背景に"V"の文字）です。実運用前に、同じファイル名・サイズで正式なアイコン画像に差し替えてください。
+
+## GitHub Pagesへのデプロイ
+
+`main`ブランチへのpushをトリガーに、`.github/workflows/deploy.yml`が自動的にビルド・デプロイを行います（GitHub Actions経由）。
+
+**事前設定（初回のみ）**: GitHubリポジトリの `Settings → Pages → Build and deployment → Source` を **GitHub Actions** に設定してください。
+
+デプロイ後は以下のURLで公開されます。
+
+```
+https://decoporange.github.io/vocab-quiz/
+```
+
+このURLは `vite.config.ts` の `base: "/vocab-quiz/"` と対応しています。リポジトリ名を変更する場合は、`vite.config.ts` の `BASE_PATH` も合わせて変更してください。
+
+`npm run dev`（ローカル開発）は`base: "/"`のまま動作するため、ローカル確認には影響ありません。
 
 ## ディレクトリ構成
 

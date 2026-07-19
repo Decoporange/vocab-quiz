@@ -2,8 +2,12 @@ import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import { VitePWA } from "vite-plugin-pwa";
 
-export default defineConfig({
-  base: "/vocab-quiz/",   // ←追加
+// GitHub Pages (https://decoporange.github.io/vocab-quiz/) 用のbase。
+// npm run dev ではローカル確認をしやすいよう "/" のままにする。
+const BASE_PATH = "/vocab-quiz/";
+
+export default defineConfig(({ command }) => ({
+  base: command === "build" ? BASE_PATH : "/",
   plugins: [
     react(),
     VitePWA({
@@ -14,7 +18,7 @@ export default defineConfig({
         short_name: "Vintageクイズ",
         description: "Vintage 4th Edition 848〜1323 反復学習クイズ",
         lang: "ja",
-        theme_color: "#1C1B1F",
+        theme_color: "#6750A4",
         background_color: "#1C1B1F",
         display: "standalone",
         icons: [
@@ -40,4 +44,4 @@ export default defineConfig({
       }
     })
   ]
-});
+}));
