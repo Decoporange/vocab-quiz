@@ -3,6 +3,7 @@ import react from "@vitejs/plugin-react";
 import { VitePWA } from "vite-plugin-pwa";
 
 export default defineConfig({
+  base: "/vocab-quiz/",   // ←追加
   plugins: [
     react(),
     VitePWA({
@@ -13,7 +14,7 @@ export default defineConfig({
         short_name: "Vintageクイズ",
         description: "Vintage 4th Edition 848〜1323 反復学習クイズ",
         lang: "ja",
-        theme_color: "#6750A4",
+        theme_color: "#1C1B1F",
         background_color: "#1C1B1F",
         display: "standalone",
         icons: [
